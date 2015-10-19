@@ -83,44 +83,47 @@ var fellowship = {
     // move the hobbits and the buddies to Rivendell
     // create a new div called 'the-fellowship'
     var theFellowship = document.createElement("div");
+    console.log(theFellowship);
     theFellowship.textContent = "fellowship";
     theFellowship.id = "fellowship";
-    theFellowship.appendChild(document.createElement('ul'));
+    var ulList = theFellowship.appendChild(document.createElement('ul'));
+    var ulList2 = theFellowship.appendChild(document.createElement('ul'));
+
     document.body.appendChild(theFellowship);
 
-    // var theFellowship = document.createElement('div');
-    // theFellowship.id="fellowship";
-    // fellowship.textContent = "the-fellowship";
-    // theFellowship.appendChild(document.createElement("ul"));
     // add each hobbit and buddy one at a time to 'the-fellowship'
     // after each character is added make an alert that they have joined your party
-    var hobbitMove = document.getElementsByTagName('article')[1];
+    var rivendell = document.getElementsByTagName('article')[1];
+    console.log(rivendell);
     var hobbits = document.querySelectorAll("ul")[0];
+    console.log(hobbits);
     hobbits.id="hobbits"
-    var hobbitList = document.getElementById('hobbits');
-    hobbitMove.appendChild(hobbitList);
+    // var hobbitList = document.getElementById('hobbits');
+    // console.log(hobbitList);
+    rivendell.appendChild(hobbits);
 
-    // var list = document.createElement('ul');
-    // for (var i=0;i< hobbits.length;i++) {
-    //   // var hobbit = document.createElement("li");
-    //   // hobbit.innerText = hobbits[i];
-    //   // // hobbit.innerHTML = "<li>" + hobbits[i] + "</li>";
-    //   // list.appendChild(hobbit);
-    //   theFellowship.appendChild(hobbitList[i]);
-    //   alert(hobbits[i].textContent + " has joined your party.")
-    // }
-    // var fellowship = document.getElementById('theFellowship');
-    var hobbitArray = document.getElementById('theFellowship');
-    for (var i = 0; i < hobbits.length; i++){
-          theFellowship.appendChild(hobbitArray);
-          alert(hobbits[i] + " " + "has joined your party");
+    for (var i = 0; i < fellowship.hobbits.length; i++){
+          var newLi = document.createElement("li")
+          newLi.innerHTML = fellowship.hobbits[i];
+          ulList.appendChild(newLi);
+          console.log(theFellowship)
+          alert(newLi.innerText + " " + "has joined your party");
         }
+        console.log(theFellowship);
 
-    var buddyMove = document.getElementsByTagName('article')[1];
-    var buddy = document.querySelectorAll("ul")[0]
-    buddy.id="buddy"
-    var buddyList = document.getElementById('buddy');
-    buddyMove.appendChild(buddyList);
+
+        var buddy = document.querySelectorAll("ul")[0];
+        console.log(buddy);
+        buddy.id="buddy"
+        rivendell.appendChild(buddy);
+
+        for (var i = 0; i < fellowship.buddies.length; i++){
+              var newLi = document.createElement("li")
+              newLi.innerHTML = fellowship.buddies[i];
+              ulList2.appendChild(newLi);
+              console.log(theFellowship)
+              alert(newLi.innerText + " " + "has joined your party");
+            }
   }
 }
 
@@ -130,3 +133,19 @@ fellowship.keepItSecretKeepItSafe();
 fellowship.makeBuddies(fellowship.buddies);
 fellowship.beautifulStranger();
 fellowship.forgeTheFellowShip();
+
+
+
+// var list = document.createElement('ul');
+// for (var i=0;i< hobbits.length;i++) {
+//   // var hobbit = document.createElement("li");
+//   // hobbit.innerText = hobbits[i];
+//   // // hobbit.innerHTML = "<li>" + hobbits[i] + "</li>";
+//   // list.appendChild(hobbit);
+//   theFellowship.appendChild(hobbitList[i]);
+//   alert(hobbits[i].textContent + " has joined your party.")
+// }
+// var fellowship = document.getElementById('theFellowship');
+
+// var hobbitArray = document.getElementById('hobbits').childNodes;
+// console.log(hobbitArray);
